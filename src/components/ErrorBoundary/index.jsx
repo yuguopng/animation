@@ -5,7 +5,7 @@ const ErrorBoundary = (props) => {
   let error = useRouteError();
   console.error('ErrorBoundary error', error);
   // Uncaught ReferenceError: path is not defined
-  return <div>Dang!</div>;
+  return <div>Dang! render error!</div>;
 }
 
 export default ErrorBoundary

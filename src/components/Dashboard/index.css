@@ -1,0 +1,28 @@
+.Dashboard {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden
+}
+
+.Dashboard-sider {
+  flex: 0 0 auto;
+  height: 100%;
+  width: auto;
+  background-color: transparent;
+}
+
+.Dashboard-content {
+  flex: 1 0 auto;
+  width: 0;
+  height: 100%;
+  background-color: transparent;
+}
+
+.Dashboard-content-header,
+.Dashboard-content-body,
+.Dashboard-content-footer {
+  background-color: transparent;
+}

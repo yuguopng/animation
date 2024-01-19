@@ -4,6 +4,7 @@ import { RouterProvider } from 'react-router-dom'
 import { Facebook } from 'react-content-loader'
 import reportWebVitals from './reportWebVitals';
 import { router } from './router'
+import 'normalize.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,6 +1,7 @@
 import { createHashRouter, createBrowserRouter } from 'react-router-dom'
 import ErrorBoundary from './components/ErrorBoundary'
 import Home from './pages/Home'
+import Link from './pages/Link'
 
 export const router = createHashRouter([
   {
@@ -16,13 +17,13 @@ export const router = createHashRouter([
     // "/page1/:id/:type"
     path: '/',
     element: <Home />,
-    /**
-     * with this data loaded before rendering
-     * 初始化 element 数据
-     * 可在组件内使用 useLoaderData 读取获取的数据
-     * @param {*} props 
-     * @returns 
-     */
+    // /**
+    //  * with this data loaded before rendering
+    //  * 初始化 element 数据
+    //  * 可在组件内使用 useLoaderData 读取获取的数据
+    //  * @param {*} props 
+    //  * @returns 
+    //  */
     // loader: async (props) => {
     //   console.log("run loader", props)
     //   return new Promise((r) => {
@@ -41,7 +42,13 @@ export const router = createHashRouter([
      * 在组件内可使用 useRouteError 获取错误信息
      */
     // errorElement: <ErrorBoundary type="errorElement" />,
-    ErrorBoundary
+    ErrorBoundary,
+    /**
+     * 子节点
+     */
+    children: [
+      
+    ]
   },
   {
     /**
@@ -106,6 +113,23 @@ export const router = createHashRouter([
         },
         Component
       }
+    },
+  },
+  {
+    /**
+     * Link
+     */
+
+    path: '/link/:id?',
+    element: <Link />,
+    loader: async (props) => {
+      console.log("run loader", props)
+      return new Promise((r) => {
+        setTimeout(() => {
+          r(Math.floor(Math.random() * 100))
+          // 页面 5s 后渲染
+        }, 2000);
+      });
     },
   }
 ])
